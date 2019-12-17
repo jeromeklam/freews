@@ -13,7 +13,7 @@
     ],
     "require" : {
         "php"                                  : ">=7.0",
-        "react/socket"                         : "",
+        "react/socket"                         : "*",
         "jeromeklam/freefw"                    : "*"
     },
     "autoload" : {
