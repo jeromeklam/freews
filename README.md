@@ -1,2 +1,2 @@
-# freews
-Free PHP WebSocket
+# freeWS
+Free Web Socket server
