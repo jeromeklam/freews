@@ -2,9 +2,9 @@
     "name"        : "jeromeklam/freews",
     "type"        : "library",
     "description" : "Free PHP WebSocket",
-    "keywords"    : ["FREE", "SOCKET", "PHP"],
+    "keywords"    : ["FREE", "SOCKET", "PHP", "WAMP2"],
     "homepage"    : "http://github.com/jeromeklam",
-    "license"     : "gpl",
+    "license"     : "gplv3",
     "authors" : [
         {
             "name"  : "KLAM Jérôme",
@@ -14,6 +14,8 @@
     "require" : {
         "php"                                  : ">=7.0",
         "react/socket"                         : "*",
+        "cboden/ratchet"                       : "*",
+        "guzzlehttp/guzzle"                    : "*",
         "jeromeklam/freefw"                    : "*"
     },
     "autoload" : {
@@ -22,7 +24,6 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4",
-        "guzzlehttp/guzzle": "~6.0"
+        "phpunit/phpunit": "^6.4"
     }
 }
