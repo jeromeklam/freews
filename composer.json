@@ -4,7 +4,7 @@
     "description" : "Free PHP WebSocket",
     "keywords"    : ["FREE", "SOCKET", "PHP", "WAMP2"],
     "homepage"    : "http://github.com/jeromeklam",
-    "license"     : "gplv3",
+    "license"     : "LGPL-3.0-only",
     "authors" : [
         {
             "name"  : "KLAM Jérôme",
