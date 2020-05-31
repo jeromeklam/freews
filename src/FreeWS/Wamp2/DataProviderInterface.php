@@ -6,7 +6,7 @@ namespace FreeWS\Wamp2;
  * @author jeromeklam
  *
  */
-interface DataproviderInterface
+interface DataProviderInterface
 {
 
     /**
