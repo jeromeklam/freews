@@ -40,10 +40,11 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function __construct(WampServerInterface $app, $p_logger)
     {
+        echo '__construct' . PHP_EOL;
+        $this->setLogger($p_logger);
         $this->app          = $app;
         $this->wampProtocol = new ServerProtocol(new TopicManager($app));
         // Logger
-        $this->setLogger($p_logger);
         $this->wampProtocol->setLogger($p_logger);
         $this->app->setLogger($p_logger);
     }
@@ -53,6 +54,7 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function onOpen(ConnectionInterface $conn)
     {
+        echo 'onOpen' . PHP_EOL;
         $this->logger->info('Wamp2.WampServer.onOpen.start');
         $this->wampProtocol->onOpen($conn);
         $this->logger->info('Wamp2.WampServer.onOpen.start');
@@ -63,6 +65,7 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function onMessage(ConnectionInterface $conn, $msg)
     {
+        echo 'onMessage' . PHP_EOL;
         $this->logger->info('Wamp2.onMessage.onMessage.start');
         try {
             $this->wampProtocol->onMessage($conn, $msg);
@@ -78,6 +81,7 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function onClose(ConnectionInterface $conn)
     {
+        echo 'onClose' . PHP_EOL;
         $this->logger->info('Wamp2.WampServer.onClose.start');
         $this->wampProtocol->onClose($conn);
         $this->logger->info('Wamp2.WampServer.onClose.end');
@@ -88,6 +92,7 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function onError(ConnectionInterface $conn, \Exception $e)
     {
+        echo 'onError' . PHP_EOL;
         $this->logger->info('Wamp2.WampServer.onError.start');
         $this->logger->error($e->getMessage());
         $this->wampProtocol->onError($conn, $e);
@@ -99,7 +104,9 @@ class WampServer implements MessageComponentInterface, WsServerInterface, Logger
      */
     public function getSubProtocols()
     {
+        echo 'getSubProtocols' . PHP_EOL;
         $this->logger->info('Wamp2.WampServer.getSubProtocols');
-        return $this->wampProtocol->getSubProtocols();
+        $subs = $this->wampProtocol->getSubProtocols();
+        return $subs;
     }
 }

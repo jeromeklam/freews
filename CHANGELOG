@@ -1,3 +1,7 @@
+# 1.1.0 : --/--/2020
+
+* StorageListener
+
 # 1.0.2 : First test version
 
 * Simple implementation of WAMP2 over ratchetphp (https://github.com/ratchetphp/Ratchet)

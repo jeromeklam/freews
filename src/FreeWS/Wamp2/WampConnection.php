@@ -66,7 +66,7 @@ class WampConnection extends AbstractConnectionDecorator
      */
     public function event($topic, $msg)
     {
-        return $this->send(json_encode(array(WAMP::MSG_EVENT, (string)$topic, $msg)));
+        return $this->send(json_encode(array(WAMP::MSG_EVENT, (string)$topic, '',$msg)));
     }
 
     /**
@@ -91,7 +91,7 @@ class WampConnection extends AbstractConnectionDecorator
         if (preg_match('/http(s*)\:\/\//', $uri) == false) {
             if (strpos($uri, $curieSeperator) !== false) {
                 list($prefix, $action) = explode($curieSeperator, $uri);
-                
+
                 if(isset($this->WAMP->prefixes[$prefix]) === true){
                   return $this->WAMP->prefixes[$prefix] . '#' . $action;
                 }

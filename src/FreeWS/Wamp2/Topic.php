@@ -56,7 +56,7 @@ class Topic implements \IteratorAggregate, \Countable
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function __toString()
