@@ -153,7 +153,7 @@ class Wamp2StorageListener implements WampServerInterface, LoggerAwareInterface
                 }
                 $topic->broadcast($json);
             } else {
-                $this->logger->info('Wamp2.onEvent topic not attached');
+                $this->logger->info(sprintf('Wamp2.onEvent topic not attached %s', $event));
             }
         } catch (\Exception $ex) {
             $this->logger->critical($ex->getMessage);
