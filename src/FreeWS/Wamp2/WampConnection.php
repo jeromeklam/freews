@@ -66,7 +66,7 @@ class WampConnection extends AbstractConnectionDecorator
      */
     public function event($topic, $msg)
     {
-        return $this->send(json_encode(array(WAMP::MSG_EVENT, (string)$topic, '',$msg)));
+        return $this->send(json_encode(array(WAMP::MSG_EVENT, (string)$topic, new \stdClass(), [], $msg)));
     }
 
     /**
